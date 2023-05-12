@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark welcome">
+    <div class="d-flex flex-grow-1">
+        <!-- <span class="w-100 d-lg-none d-block"> -->
+            <!-- hidden spacer to center brand on mobile -->
+        <!-- </span> -->
+        <a routerLink="/">
+        <p class="navbar-brand d-none d-lg-inline-block ms-3" href="#"> Hi User 
+          <i class='far fa-handshake ms-2 mt-2' style='font-size:30px;font-weight: bold;'></i>
+        </p>
+        </a>
+        <!-- <a class="navbar-brand-two mx-auto d-lg-none d-inline-block" href="#">
+            <img src="//placehold.it/40?text=LOGO" alt="logo">
+        </a> -->
+        <!-- <div class="w-100 text-right">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div> -->
+    </div>
+    
+    <div class="collapse navbar-collapse flex-grow-1 text-right">
+        <ul class="navbar-nav ms-auto flex-nowrap">
+            <li class="nav-item">
+                <a routerLink="/startingmail" class="nav-link m-2 menu-item nav-active" disable>Starting Mail</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/resumingmail" class="nav-link m-2 menu-item">Resuming Mail</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/completionmail" class="nav-link m-2 menu-item">Completion Mail</a>
+            </li>
+            <li class="nav-item">
+                  <i class='far fa-user-circle nav-link m-2 menu-item' style='color:white;font-weight: bold;font-size: 30px;'></i>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

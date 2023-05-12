@@ -1,0 +1,22 @@
+.welcome{
+    background-image: url('../../../assets/hitech.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* background-position: center center; */
+    background-color: white;
+    background-attachment: fixed;
+    background-origin: border-box;
+    height: 91.9vh;
+    width:100vw;
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.middle{
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}

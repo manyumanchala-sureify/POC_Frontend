@@ -1,0 +1,140 @@
+<section class="p-5" style="background-color: #eee;">
+  <div class="row align-items-center" style="background-color:white">
+    <div class="col-md-7">
+
+      <form class="ps-5 ms-5 example-form" [formGroup]="form" (submit)="send()"> 
+        <p class="h1 mb-2 p-5" style="font-weight: bold;">Complete Task!!!</p>
+
+        <div class="alert alert-primary" role="alert" *ngIf="message.length>0">
+          <p *ngFor="let i of message" style="font-weight: 100;font-size: 20px;">{{i}}</p>
+        </div>
+
+        <div class="form-group m-2">
+          <label for="fromEmail" class="col-sm-2 col-form-label">
+              <i class="fas fa-envelope fa-lg fa-fw"></i>
+              From Email
+            </label>
+            <mat-form-field class="example-full-width" style="width:60%">
+              <!-- <mat-label for="staticEmail">From Email</mat-label> -->
+              <input type="email" readonly matInput id="staticEmail" placeholder="****@gmail.com">
+            </mat-form-field>
+        </div>
+
+        <div class="form-group m-2">
+          <label for="name" class="col-sm-2 col-form-label">
+            <i class="far fa-user-circle fa-lg fa-fw"></i>
+            Name
+          </label>
+        <mat-form-field style="width:60%">
+            <mat-label for="name">To Name</mat-label>
+            <input type="text" formControlName="name" matInput id="name" placeholder="toName">
+        </mat-form-field>
+        </div>
+
+        <div class="form-group m-2">
+        <label for="toEmail" class="col-sm-2 col-form-label">
+            <i class="fas fa-envelope fa-lg fa-fw"></i>
+            To Email
+          </label>
+          <mat-form-field style="width:60%">
+            <mat-label for="toEmail">To Email</mat-label>
+            <input type="email" formControlName="toEmail" matInput id="toEmail" placeholder="toEmail@gmail.com">
+          </mat-form-field>
+        </div>
+
+        <div class="form-group m-2">
+          <label for="ccEmail" class="col-sm-2 col-form-label">
+            <i class="fas fa-envelope fa-lg fa-fw"></i>
+            Cc Email
+          </label>
+          <mat-form-field style="width:60%">
+            <mat-chip-grid #chipListCC formArrayName="ccEmail">
+              <mat-chip selected *ngFor="let item of ccEmailFunc.value; let i=index" 
+                [selectable]="true" 
+                [removable]="removable"
+                (removed)="removeCCEmail(i)" 
+                required name="chips">
+                {{item}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="Enter CC Emails" 
+                [matChipInputFor]="chipListCC" 
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes " 
+                [matChipInputAddOnBlur]="true "
+                (matChipInputTokenEnd)="addCC($event) "/>
+            </mat-chip-grid>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group m-2">
+          <label for="toEmail" class="col-sm-2 col-form-label">
+            <i class="fas fa-envelope fa-lg fa-fw"></i>
+            Bcc Email
+          </label>
+          <mat-form-field style="width:60%">
+            <mat-chip-grid #chipListBCC formArrayName="bccEmail">
+              <mat-chip selected *ngFor="let item of bccEmailFunc.value; let i=index" 
+                [selectable]="true" 
+                [removable]="removable"
+                (removed)="removeBCCEmail(i)" 
+                required name="chips">
+                {{item}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="Enter BCC Emails" 
+                [matChipInputFor]="chipListBCC" 
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes " 
+                [matChipInputAddOnBlur]="true "
+                (matChipInputTokenEnd)="addBcc($event) " />
+            </mat-chip-grid>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group m-2">
+          <label for="name" class="col-sm-2 col-form-label">
+            <i class="fas fa-address-book	 fa-lg fa-fw"></i>      
+            Subject
+          </label>
+          <mat-form-field style="width:60%">
+            <!-- <mat-label for="name">Resuming Mail</mat-label> -->
+            <input type="text" formControlName="subject" matInput id="subject" placeholder="Resuming Mail">
+          </mat-form-field>
+        </div>
+
+        <div class="form-group m-2">
+          <label for="body" class="col-sm-2 col-form-label">
+            <i class="fas fa-file-alt	 fa-lg fa-fw"></i>
+            Body
+          </label>
+          <mat-form-field style="width:60%">
+              <!-- <mat-label for="body">Hi User,Let's complete application</mat-label> -->
+              <textarea formControlName="body" matInput id="body" placeholder="Hi User,Let's complete application" rows="4" columns="25"></textarea>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group m-2">
+          <label for="url" class="col-sm-2 col-form-label">
+            <i class="fa fa-link fa-lg fa-fw"></i>
+            Url
+          </label>
+          <mat-form-field style="width:60%">
+              <mat-label for="url">Url</mat-label>
+              <input type="url" formControlName="url" matInput id="url" placeholder="http://www.example.com/index.html">
+            </mat-form-field>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-md col-3 justify-content-center m-4 ms-10" style="font-weight: bold;">
+          Send Mail
+          <i class="fas fa-space-shuttle	fa-lg fa-fw p-2"></i>
+        </button>
+
+      </form>
+    </div>
+
+    <div class="col-md-5 justify-content-center align-items-center">
+      <img src="../../../assets/send.jpg"/>
+    </div>
+
+  </div>
+
+</section>

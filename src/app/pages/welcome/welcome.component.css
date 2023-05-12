@@ -1,0 +1,24 @@
+.welcome{
+    background-image: url('../../../assets/welcome.webp');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 91.5vh;
+    width:100vw;
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.middle{
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

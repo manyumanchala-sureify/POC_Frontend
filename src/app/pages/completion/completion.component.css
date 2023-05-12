@@ -1,0 +1,11 @@
+.welcome{
+    background-image: url('../../../assets/fool.webp');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-size: auto;
+    background-position: center;
+    height: 80vh;
+    width:100vw;
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+}
